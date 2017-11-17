@@ -1,9 +1,10 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react')) :
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react')) :
 	typeof define === 'function' && define.amd ? define(['exports', 'react'], factory) :
-	(factory((global.styled = global.styled || {}), global.React))
-}(this, ((exports, React) => {
-  const React__default = 'default' in React ? React.default : React
+	(factory((global.styled = global.styled || {}),global.React));
+}(this, (function (exports,React) { 'use strict';
+
+var React__default = 'default' in React ? React['default'] : React;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -14,7 +15,7 @@
  * @typechecks
  */
 
-  const _uppercasePattern = /([A-Z])/g
+var _uppercasePattern = /([A-Z])/g;
 
 /**
  * Hyphenates a camelcased string, for example:
@@ -28,15 +29,15 @@
  * @param {string} string
  * @return {string}
  */
-  function hyphenate$2(string) {
-    return string.replace(_uppercasePattern, '-$1').toLowerCase()
-  }
+function hyphenate$2(string) {
+  return string.replace(_uppercasePattern, '-$1').toLowerCase();
+}
 
-  const hyphenate_1 = hyphenate$2
+var hyphenate_1 = hyphenate$2;
 
-  const hyphenate = hyphenate_1
+var hyphenate = hyphenate_1;
 
-  const msPattern = /^ms-/
+var msPattern = /^ms-/;
 
 /**
  * Hyphenates a camelcased CSS property name, for example:
@@ -54,95 +55,117 @@
  * @param {string} string
  * @return {string}
  */
-  function hyphenateStyleName(string) {
-    return hyphenate(string).replace(msPattern, '-ms-')
+function hyphenateStyleName(string) {
+  return hyphenate(string).replace(msPattern, '-ms-');
+}
+
+var hyphenateStyleName_1 = hyphenateStyleName;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+
+
+
+
+
+
+
+
+
+
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
   }
+};
 
-  const hyphenateStyleName_1 = hyphenateStyleName
-
-  const _typeof = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? function (obj) {
-    return typeof obj
-  } : function (obj) {
-    return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj
-  }
-
-
-  const classCallCheck = function (instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError('Cannot call a class as a function')
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
     }
   }
 
-  const createClass = (function () {
-    function defineProperties(target, props) {
-      for (let i = 0; i < props.length; i++) {
-        const descriptor = props[i]
-        descriptor.enumerable = descriptor.enumerable || false
-        descriptor.configurable = true
-        if ('value' in descriptor) descriptor.writable = true
-        Object.defineProperty(target, descriptor.key, descriptor)
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+
+
+
+
+
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
       }
     }
-
-    return function (Constructor, protoProps, staticProps) {
-      if (protoProps) defineProperties(Constructor.prototype, protoProps)
-      if (staticProps) defineProperties(Constructor, staticProps)
-      return Constructor
-    }
-  }())
-
-
-  const _extends = Object.assign || function (target) {
-    for (let i = 1; i < arguments.length; i++) {
-      const source = arguments[i]
-
-      for (const key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key]
-        }
-      }
-    }
-
-    return target
   }
 
+  return target;
+};
 
-  const inherits = function (subClass, superClass) {
-    if (typeof superClass !== 'function' && superClass !== null) {
-      throw new TypeError(`Super expression must either be null or a function, not ${typeof superClass}`)
-    }
 
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true,
-      },
-    })
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass
+
+var inherits = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
   }
 
-
-  const objectWithoutProperties = function (obj, keys) {
-    const target = {}
-
-    for (const i in obj) {
-      if (keys.indexOf(i) >= 0) continue
-      if (!Object.prototype.hasOwnProperty.call(obj, i)) continue
-      target[i] = obj[i]
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
     }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
 
-    return target
+
+
+
+
+
+
+
+
+var objectWithoutProperties = function (obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
   }
 
-  const possibleConstructorReturn = function (self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-    }
+  return target;
+};
 
-    return call && (typeof call === 'object' || typeof call === 'function') ? call : self
+var possibleConstructorReturn = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
 
 /*!
  * isobject <https://github.com/jonschlinkert/isobject>
@@ -151,78 +174,77 @@
  * Released under the MIT License.
  */
 
-  const index$1 = function isObject(val) {
-    return val != null && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && Array.isArray(val) === false
-  }
+var index$1 = function isObject(val) {
+  return val != null && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && Array.isArray(val) === false;
+};
 
-  const isObject = index$1
+var isObject = index$1;
 
-  function isObjectObject(o) {
-    return isObject(o) === true && Object.prototype.toString.call(o) === '[object Object]'
-  }
+function isObjectObject(o) {
+  return isObject(o) === true && Object.prototype.toString.call(o) === '[object Object]';
+}
 
-  const index = function isPlainObject(o) {
-    let ctor,
-      prot
+var index = function isPlainObject(o) {
+  var ctor, prot;
 
-    if (isObjectObject(o) === false) return false
+  if (isObjectObject(o) === false) return false;
 
   // If has modified constructor
-    ctor = o.constructor
-    if (typeof ctor !== 'function') return false
+  ctor = o.constructor;
+  if (typeof ctor !== 'function') return false;
 
   // If has modified prototype
-    prot = ctor.prototype
-    if (isObjectObject(prot) === false) return false
+  prot = ctor.prototype;
+  if (isObjectObject(prot) === false) return false;
 
   // If constructor does not have an Object-specific method
-    if (prot.hasOwnProperty('isPrototypeOf') === false) {
-      return false
-    }
+  if (prot.hasOwnProperty('isPrototypeOf') === false) {
+    return false;
+  }
 
   // Most likely a plain Object
-    return true
-  }
+  return true;
+};
 
-//
-  const objToCss = function objToCss(obj, prevKey) {
-    const css = Object.keys(obj).filter((key) => {
-      const chunk = obj[key]
-      return chunk !== undefined && chunk !== null && chunk !== false && chunk !== ''
-    }).map((key) => {
-      if (index(obj[key])) return objToCss(obj[key], key)
-      return `${hyphenateStyleName_1(key)}: ${obj[key]};`
-    }).join(' ')
-    return prevKey ? `${prevKey} {\n  ${css}\n}` : css
-  }
+//      
+var objToCss = function objToCss(obj, prevKey) {
+  var css = Object.keys(obj).filter(function (key) {
+    var chunk = obj[key];
+    return chunk !== undefined && chunk !== null && chunk !== false && chunk !== '';
+  }).map(function (key) {
+    if (index(obj[key])) return objToCss(obj[key], key);
+    return hyphenateStyleName_1(key) + ': ' + obj[key] + ';';
+  }).join(' ');
+  return prevKey ? prevKey + ' {\n  ' + css + '\n}' : css;
+};
 
-  const flatten = function flatten(chunks, executionContext) {
-    return chunks.reduce((ruleSet, chunk) => {
+var flatten = function flatten(chunks, executionContext) {
+  return chunks.reduce(function (ruleSet, chunk) {
     /* Remove falsey values */
-      if (chunk === undefined || chunk === null || chunk === false || chunk === '') return ruleSet
+    if (chunk === undefined || chunk === null || chunk === false || chunk === '') return ruleSet;
     /* Flatten ruleSet */
-      if (Array.isArray(chunk)) return [].concat(ruleSet, flatten(chunk, executionContext))
+    if (Array.isArray(chunk)) return [].concat(ruleSet, flatten(chunk, executionContext));
 
     /* Handle other components */
     // $FlowFixMe not sure how to make this pass
-      if (chunk.hasOwnProperty('styledComponentId')) return [].concat(ruleSet, [`.${chunk.styledComponentId}`])
+    if (chunk.hasOwnProperty('styledComponentId')) return [].concat(ruleSet, ['.' + chunk.styledComponentId]);
 
     /* Either execute or defer the function */
-      if (typeof chunk === 'function') {
-        return executionContext ? ruleSet.concat(...flatten([chunk(executionContext)], executionContext)) : ruleSet.concat(chunk)
-      }
+    if (typeof chunk === 'function') {
+      return executionContext ? ruleSet.concat.apply(ruleSet, flatten([chunk(executionContext)], executionContext)) : ruleSet.concat(chunk);
+    }
 
     /* Handle objects */
     // $FlowFixMe have to add %checks somehow to isPlainObject
-      return ruleSet.concat(index(chunk) ? objToCss(chunk) : chunk.toString())
-    }, [])
-  }
+    return ruleSet.concat(index(chunk) ? objToCss(chunk) : chunk.toString());
+  }, []);
+};
 
-  function createCommonjsModule(fn, module) {
-    return module = { exports: {} }, fn(module, module.exports), module.exports
-  }
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
 
-  const stylis$1 = createCommonjsModule((module, exports) => {
+var stylis$1 = createCommonjsModule(function (module, exports) {
 	/*
   *          __        ___
   *    _____/ /___  __/ (_)____
@@ -233,10 +255,10 @@
   *
   * light - weight css preprocessor @licence MIT
   */
-    (function (factory) {
+	(function (factory) {
 		/* eslint-disable */
 		(typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module['exports'] = factory(null) : typeof undefined === 'function' && undefined['amd'] ? undefined(factory(null)) : window['stylis'] = factory(null);
-	}( /** @param {*=} options */function factory(options) {
+	})( /** @param {*=} options */function factory(options) {
 		/* eslint-disable */
 
 		'use strict';
@@ -1921,7 +1943,7 @@
 		}
 
 		return stylis;
-	}));
+	});
 });
 
 //      
